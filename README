@@ -5,3 +5,5 @@ It enables for two kinds of backup:
 New paths can be added to a dictionary.
 
 v.2
+File paths outside, in a different file.
+Cleaner code:)

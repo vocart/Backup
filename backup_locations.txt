@@ -1,0 +1,13 @@
+locations_copy_replace:
+C:\Users\Lech\Desktop\grr : \\192.168.20.20\kopia pulpit\grr
+C:\Users\Lech\Desktop\mn : \\192.168.20.20\kopia pulpit\mn
+C:\Users\Lech\Desktop\ffff : \\192.168.20.20\kopia pulpit\ffff
+
+locations_copy_new_version:
+C:\Users\Lech\Desktop\ffff\figurki - aukcje, kasa.xls
+C:\Users\Lech\Desktop\ffff\figurki - spis 2020.xls
+C:\Users\Lech\Desktop\ffff\obiektywy.xls
+C:\Users\Lech\Desktop\ffff\waga.xls
+
+locations_update:
+C:\Users\Lech\Desktop\backuptest folder : \\192.168.20.20\kopia pulpit\backup test folder serwer

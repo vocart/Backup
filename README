@@ -8,17 +8,23 @@ New paths can be added to a dictionary.
 
 It consists of:
 - Backup.py - initializing file - starts three kinds of backup (each in a different file)
-- backup_locations.py - it contains of two dictionaries (with 'source location':'backup location' system) and list of locations to backup; each container with locations for different kind of backup
+- backup_locations.txt - it contains of three lists of copied locations, for each backup. Two lists have system of naming 'location_source':'location_destination' and the third is only a list of files to copy.
 - actions.py - contains common actions for backup files
+- convert_locations_to_backup.py - changes links from txt to dictionaries/list for files to use
 - three backupping files, each makes different kind of backup: 
   - new version of files in a fresh folder with todays date
   - replacing old folders with new ones - checks if folders size changed, if not it doesn't take action, if it is different - the folder is removed and replaced by a new one
   - updating folders - checks each folder inside location if they differ from the already backupped version and replaces them if they do
+
+v.4
+- backup_locations changed from .py to .txt with 'normal' copied destinations rather than already changed to use by program
+- convert_locations_to_backup.py added to convert destinations from txt to dictionaries/lists
+- changes of names and simplyfiyng functions
  
 v.3
 Program divided for different roles - initialize, actions, locations and three kinds of backup.
 Even more clean code.
 
 v.2
-File paths outside, in a different file.
+File paths separated from main files to a different file.
 Cleaner code:)

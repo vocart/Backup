@@ -37,7 +37,8 @@ def sort_links():
         dictionary_link = link.split(' : ')
         locations_update[dictionary_link[0]] = dictionary_link[1]
 
-
+#file_with_locations = 'backup_locations_dyskzewn F-S.txt'
 file_with_locations = 'backup_locations.txt'
+#file_with_locations = 'backup_locations_dyskzewn.txt'
 get_links_from_file(file_with_locations)
 sort_links()

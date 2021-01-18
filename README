@@ -16,6 +16,10 @@ It consists of:
   - replacing old folders with new ones - checks if folders size changed, if not it doesn't take action, if it is different - the folder is removed and replaced by a new one
   - updating folders - checks each folder inside location if they differ from the already backupped version and replaces them if they do
 
+v.5
+Fixed some errors.
+Cleaner code.
+
 v.4
 - backup_locations changed from .py to .txt with 'normal' copied destinations rather than already changed to use by program
 - convert_locations_to_backup.py added to convert destinations from txt to dictionaries/lists

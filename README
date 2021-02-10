@@ -16,6 +16,9 @@ It consists of:
   - replacing old folders with new ones - checks if folders size changed, if not it doesn't take action, if it is different - the folder is removed and replaced by a new one
   - updating folders - checks each folder inside location if they differ from the already backupped version and replaces them if they do
 
+v.6
+Cleaner code.
+
 v.5
 Fixed some errors.
 Cleaner code.

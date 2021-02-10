@@ -2,6 +2,7 @@ import os
 
 
 links_list = []
+
 def get_links_from_file(links_file_name):
 
     if os.path.isfile(links_file_name):
@@ -22,6 +23,7 @@ def get_links_from_file(links_file_name):
 locations_copy_replace = {}
 locations_copy_new_version = []
 locations_update = {}
+
 def sort_links():
     mark2 = links_list.index('locations_copy_new_version:')
     mark3 = links_list.index('locations_update:')
@@ -37,8 +39,8 @@ def sort_links():
         dictionary_link = link.split(' : ')
         locations_update[dictionary_link[0]] = dictionary_link[1]
 
-#file_with_locations = 'backup_locations_dyskzewn F-S.txt'
+
 file_with_locations = 'backup_locations.txt'
-#file_with_locations = 'backup_locations_dyskzewn.txt'
+
 get_links_from_file(file_with_locations)
 sort_links()

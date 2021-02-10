@@ -31,6 +31,15 @@ def action_concat_path(loc, item):
 def action_generate_todays_date():
 	return datetime.now().strftime('%Y-%m-%d')
 
+# Checks if the txt file exists (if not it creates it) and initiates function that adds a location to this txt
+def add_to_disobedient_files(loc_b):
+	if action_check_if_directory_exists('disobedient_files.txt') is True:
+		action = 'a'
+		action_open_txt_and_add_location(action, loc_b)
+	else:
+		action = 'w'
+		action_open_txt_and_add_location(action, loc_b)
+
 
 def action_copy_tree(item, loc_source, loc_dest):
 	loc_a = action_concat_path(loc_source, item)
@@ -44,23 +53,11 @@ def action_copy_tree(item, loc_source, loc_dest):
 			pass
 
 		except PermissionError:
-			if action_check_if_directory_exists('disobedient_files.txt') is True:
-				action = 'a'
-				action_open_txt_and_add_location(action, loc_b)
-			else:
-				action = 'w'
-				action_open_txt_and_add_location(action, loc_b)
-		
+			add_to_disobedient_files(loc_b)
+					
 		except FileExistsError:
-			if action_check_if_directory_exists('disobedient_files.txt') is True:
-				action = 'a'
-				action_open_txt_and_add_location(action, loc_b)
-				
-			else:
-				action = 'w'
-				action_open_txt_and_add_location(action, loc_b)
-			print ('USUŃ   {}   I ZAPUŚĆ PONOWNIE BACKUP! jak się plik dodda do txt na końcu\
-				to można usunąć ten tekst'.format(loc_b))
+			add_to_disobedient_files(loc_b)
+			print ('USUŃ   {}   I ZAPUŚĆ PONOWNIE BACKUP!'.format(loc_b))
 			pass
 
 
@@ -97,7 +94,7 @@ def action_remove_tree_and_wait(item, loc_dest):
 	try:
 		shutil.rmtree(location_to_remove)
 	except NotADirectoryError:
-		print('Not a directory!!!!!!!!!!!!! trzeba coś robić?')
+		print('Not a directory!!!!!!!!!!!!! ')
 		pass
 	except PermissionError:
 		print ('NIE MOŻNA USUNĄĆ   {}   !!!!!!!!'.format(location_to_remove))
@@ -111,17 +108,17 @@ def print_files_to_remove_and_remove_temporary_file():
 	if os.path.exists('disobedient_files.txt'):
 		print('Te pliki należy usunąć z backupu ręcznie:')
 		with open('disobedient_files.txt', 'r') as plik:
-			for linia in plik:
-				print(linia)
+			for line in plik:
+				print(line)
 		os.remove('disobedient_files.txt')
 	else:
 		pass
 
 
 def action_check_if_the_disc_is_connected(location):
-	#print(location, 'OTO MI CHODZI')
+	
 	disc = action_make_disc_name(location)
-	#print('dysk podłączony - {}'.format(disc))
+	
 	if disc == '//1':
 		print('serwer, lokacja = TRUE')
 		return True
